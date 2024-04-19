@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate Coverage</title>
+    <title>Расчет зоны покрытия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Calculate Coverage</h1>
-    <h2>WiFi/WiMAX Parameters</h2>
-    <form action="/calculate_wifi_wimax" method="post">
-        <label for="distance_wifi_wimax">Distance to transmitter (m):</label>
-        <input type="number" name="distance_wifi_wimax" id="distance_wifi_wimax" required><br>
-        <label for="power_wifi_wimax">Transmitter power (dBm):</label>
-        <input type="number" name="power_wifi_wimax" id="power_wifi_wimax" required><br>
-        <label for="tx_gain_wifi_wimax">Transmitter antenna gain (dBi):</label>
-        <input type="number" name="tx_gain_wifi_wimax" id="tx_gain_wifi_wimax" required><br>
-        <label for="rx_gain_wifi_wimax">Receiver antenna gain (dBi):</label>
-        <input type="number" name="rx_gain_wifi_wimax" id="rx_gain_wifi_wimax" required><br>
-        <label for="loss_wifi_wimax">Signal loss (dB):</label>
-        <input type="number" name="loss_wifi_wimax" id="loss_wifi_wimax" required><br>
-        <button type="submit">Calculate WiFi/WiMAX</button>
-    </form>
+    <div class="container mt-5">
+        <h1 class="mb-4">Расчет зоны покрытия</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Параметры WiFi/WiMAX</h2>
+                <form action="/calculate_wifi_wimax" method="post">
+                    <div class="mb-3">
+                        <label for="distance_wifi_wimax" class="form-label">Расстояние до передатчика (м):</label>
+                        <input type="number" name="distance_wifi_wimax" id="distance_wifi_wimax" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="power_wifi_wimax" class="form-label">Мощность передатчика (дБм):</label>
+                        <input type="number" name="power_wifi_wimax" id="power_wifi_wimax" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tx_gain_wifi_wimax" class="form-label">Усиление антенны передатчика (дБи):</label>
+                        <input type="number" name="tx_gain_wifi_wimax" id="tx_gain_wifi_wimax" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rx_gain_wifi_wimax" class="form-label">Усиление антенны приемника (дБи):</label>
+                        <input type="number" name="rx_gain_wifi_wimax" id="rx_gain_wifi_wimax" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loss_wifi_wimax" class="form-label">Потери сигнала (дБ):</label>
+                        <input type="number" name="loss_wifi_wimax" id="loss_wifi_wimax" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Рассчитать WiFi/WiMAX</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Параметры LiFi</h2>
+                <form action="/calculate_lifi" method="post">
+                    <div class="mb-3">
+                        <label for="distance_lifi" class="form-label">Расстояние до передатчика (м):</label>
+                        <input type="number" name="distance_lifi" id="distance_lifi" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="power_lifi" class="form-label">Мощность передатчика (дБм):</label>
+                        <input type="number" name="power_lifi" id="power_lifi" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="light_power_lifi" class="form-label">Мощность светового источника (люкс):</label>
+                        <input type="number" name="light_power_lifi" id="light_power_lifi" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="light_angle_lifi" class="form-label">Угол распространения света (градусы):</label>
+                        <input type="number" name="light_angle_lifi" id="light_angle_lifi" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Рассчитать LiFi</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    <h2>LiFi Parameters</h2>
-    <form action="/calculate_lifi" method="post">
-        <label for="distance_lifi">Distance to transmitter (m):</label>
-        <input type="number" name="distance_lifi" id="distance_lifi" required><br>
-        <label for="power_lifi">Transmitter power (dBm):</label>
-        <input type="number" name="power_lifi" id="power_lifi" required><br>
-        <label for="light_power_lifi">Light source power (lux):</label>
-        <input type="number" name="light_power_lifi" id="light_power_lifi" required><br>
-        <label for="light_angle_lifi">Light propagation angle (degrees):</label>
-        <input type="number" name="light_angle_lifi" id="light_angle_lifi" required><br>
-        <button type="submit">Calculate LiFi</button>
-    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
