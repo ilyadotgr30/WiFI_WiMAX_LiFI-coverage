@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Coverage</title>
+</head>
+<body>
+    <h1>Calculate Coverage</h1>
+    <h2>WiFi/WiMAX Parameters</h2>
+    <form action="/calculate_wifi_wimax" method="post">
+        <label for="distance_wifi_wimax">Distance to transmitter (m):</label>
+        <input type="number" name="distance_wifi_wimax" id="distance_wifi_wimax" required><br>
+        <label for="power_wifi_wimax">Transmitter power (dBm):</label>
+        <input type="number" name="power_wifi_wimax" id="power_wifi_wimax" required><br>
+        <label for="tx_gain_wifi_wimax">Transmitter antenna gain (dBi):</label>
+        <input type="number" name="tx_gain_wifi_wimax" id="tx_gain_wifi_wimax" required><br>
+        <label for="rx_gain_wifi_wimax">Receiver antenna gain (dBi):</label>
+        <input type="number" name="rx_gain_wifi_wimax" id="rx_gain_wifi_wimax" required><br>
+        <label for="loss_wifi_wimax">Signal loss (dB):</label>
+        <input type="number" name="loss_wifi_wimax" id="loss_wifi_wimax" required><br>
+        <button type="submit">Calculate WiFi/WiMAX</button>
+    </form>
+
+    <h2>LiFi Parameters</h2>
+    <form action="/calculate_lifi" method="post">
+        <label for="distance_lifi">Distance to transmitter (m):</label>
+        <input type="number" name="distance_lifi" id="distance_lifi" required><br>
+        <label for="power_lifi">Transmitter power (dBm):</label>
+        <input type="number" name="power_lifi" id="power_lifi" required><br>
+        <label for="light_power_lifi">Light source power (lux):</label>
+        <input type="number" name="light_power_lifi" id="light_power_lifi" required><br>
+        <label for="light_angle_lifi">Light propagation angle (degrees):</label>
+        <input type="number" name="light_angle_lifi" id="light_angle_lifi" required><br>
+        <button type="submit">Calculate LiFi</button>
+    </form>
+</body>
+</html>
